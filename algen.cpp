@@ -35,21 +35,22 @@ int torneio ( individuo r[tam_pop] ){
 	return u3;
 }
 
-void cruzamento ( individuo pais[tam_pop], int news, individuo filhos[tam_pop] ){	
+void cruzamento ( individuo r[tam_pop], double tx ){
+	double aux = (tam_pop*tx)/100.0;
+	int news = aux;
+	individuo p[news];	
 	for (int y=0; y<news; y++){
 		int a1=torneio(r), a2=torneio(r);	
 		while( a1!=a2 ) a1=torneio(r); //sorteandos os pais 
+			
 		int ind=rand()%10; // indice para comecar o crossover
+		int p[10];
 		individuo f1, f2;
-		int p[10], i=0;
 		for ( int o =0; o<10;o++){
 			f1.dna[o]=r[a1].dna[o];
 			f2.dna[o]=r[a2].dna[o];
 		}
-		while ( 
-		
 	}
-	
 }
 
 void gera_pop ( individuo r[tam_pop] ){ // gera a populacao inicial 
